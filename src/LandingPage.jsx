@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 
+
 export default function YuvexLandingPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [formData, setFormData] = useState({
@@ -45,25 +46,42 @@ export default function YuvexLandingPage() {
   };
   return (
     <div
-      className="min-h-screen bg-black text-white overflow-x-hidden relative selection:bg-purple-500/30"
+      className="min-h-screen bg-[#050505] text-white overflow-x-hidden relative selection:bg-white/10"
       onMouseMove={(e) =>
         setMousePosition({ x: e.clientX, y: e.clientY })
       }
     >
-      <div className="fixed inset-0 pointer-events-none opacity-20">
+      <div className="fixed inset-0 pointer-events-none opacity-100 overflow-hidden z-0">
         <motion.div
           animate={{
             x: mousePosition.x - 200,
             y: mousePosition.y - 200,
           }}
           transition={{ type: "spring", damping: 30, stiffness: 120 }}
-          className="absolute w-[400px] h-[400px] bg-purple-500/30 blur-[120px] rounded-full"
+          className="absolute w-[400px] h-[400px] bg-white/5 blur-[120px] rounded-full"
         />
-        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/20 blur-[180px] rounded-full" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/20 blur-[160px] rounded-full" />
+        <div className="absolute top-20 left-20 w-96 h-96 bg-zinc-500/10 blur-[180px] rounded-full" />
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-zinc-700/10 blur-[160px] rounded-full" />
+        <motion.div
+          animate={{ x: ["-20%", "120%"] }}
+          transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+          className="absolute top-[18%] left-0 w-[520px] h-[3px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_30px_rgba(34,211,238,0.9)] rotate-[-12deg]"
+        />
+
+        <motion.div
+          animate={{ x: ["120%", "-20%"] }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+          className="absolute top-[52%] right-0 w-[500px] h-[3px] bg-gradient-to-r from-transparent via-purple-400 to-transparent shadow-[0_0_30px_rgba(192,132,252,0.9)] rotate-[8deg]"
+        />
+
+        <motion.div
+          animate={{ x: ["-10%", "110%"] }}
+          transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+          className="absolute bottom-[22%] left-0 w-[460px] h-[3px] bg-gradient-to-r from-transparent via-blue-400 to-transparent shadow-[0_0_30px_rgba(96,165,250,0.9)] rotate-[-6deg]"
+        />
       </div>
       <div className="max-w-7xl mx-auto px-6 py-10 relative z-10">
-        <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/60 border border-purple-500/20 shadow-[0_0_40px_rgba(168,85,247,0.08)] rounded-2xl px-6 py-4 mb-10 flex justify-between items-center">
+        <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/60 border border-zinc-800 rounded-2xl px-6 py-4 mb-10 flex justify-between items-center">
           <h2 className="font-semibold tracking-[0.2em] text-sm">
             YUVEX SYSTEMS
           </h2>
@@ -88,11 +106,11 @@ export default function YuvexLandingPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
-              We Engineer.
+              Think.
               <br />
-              The Future.
+              Build.
               <br />
-              <span className="text-purple-400">In 3D.</span>
+              <span className="text-zinc-500">Different.</span>
             </h1>
 
             <p className="mt-8 text-xl text-zinc-300 max-w-xl">
@@ -118,15 +136,15 @@ export default function YuvexLandingPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="bg-zinc-950 border border-purple-500/20 rounded-[2rem] p-8 shadow-[0_0_60px_rgba(168,85,247,0.15)] relative overflow-hidden"
+            className="bg-zinc-950 border border-zinc-800 rounded-[2rem] p-8"
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-              className="w-28 h-28 mx-auto mb-8 rounded-3xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-2xl font-bold"
-            >
-              Y
-            </motion.div>
+            <div className="mb-8 border border-zinc-800 rounded-3xl p-8 bg-black/40 backdrop-blur-xl">
+              <p className="text-xs tracking-[0.3em] text-zinc-500 mb-4">YUVEX SYSTEMS</p>
+              <h3 className="text-3xl font-semibold mb-2">Digital Excellence</h3>
+              <p className="text-zinc-400 leading-relaxed">
+                Engineered with precision. Designed for ambitious brands.
+              </p>
+            </div>
             <div className="space-y-5 text-lg text-zinc-300">
               <div>✓ Business Websites</div>
               <div>✓ Backend Systems</div>
