@@ -45,7 +45,7 @@ export default function YuvexLandingPage() {
   };
   return (
     <div
-      className="min-h-screen bg-black text-white overflow-x-hidden relative"
+      className="min-h-screen bg-black text-white overflow-x-hidden relative selection:bg-purple-500/30"
       onMouseMove={(e) =>
         setMousePosition({ x: e.clientX, y: e.clientY })
       }
@@ -57,13 +57,13 @@ export default function YuvexLandingPage() {
             y: mousePosition.y - 200,
           }}
           transition={{ type: "spring", damping: 30, stiffness: 120 }}
-          className="absolute w-[400px] h-[400px] bg-white/20 blur-[120px] rounded-full"
+          className="absolute w-[400px] h-[400px] bg-purple-500/30 blur-[120px] rounded-full"
         />
-        <div className="absolute top-20 left-20 w-96 h-96 bg-white blur-[180px] rounded-full" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-zinc-400 blur-[160px] rounded-full" />
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/20 blur-[180px] rounded-full" />
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/20 blur-[160px] rounded-full" />
       </div>
       <div className="max-w-7xl mx-auto px-6 py-10 relative z-10">
-        <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/60 border border-zinc-900 rounded-2xl px-6 py-4 mb-10 flex justify-between items-center">
+        <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/60 border border-purple-500/20 shadow-[0_0_40px_rgba(168,85,247,0.08)] rounded-2xl px-6 py-4 mb-10 flex justify-between items-center">
           <h2 className="font-semibold tracking-[0.2em] text-sm">
             YUVEX SYSTEMS
           </h2>
@@ -88,11 +88,11 @@ export default function YuvexLandingPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
-              Build.
+              We Engineer.
               <br />
-              Automate.
+              The Future.
               <br />
-              <span className="text-zinc-400">Scale.</span>
+              <span className="text-purple-400">In 3D.</span>
             </h1>
 
             <p className="mt-8 text-xl text-zinc-300 max-w-xl">
@@ -118,8 +118,15 @@ export default function YuvexLandingPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="bg-zinc-950 border border-zinc-800 rounded-[2rem] p-8 shadow-2xl"
+            className="bg-zinc-950 border border-purple-500/20 rounded-[2rem] p-8 shadow-[0_0_60px_rgba(168,85,247,0.15)] relative overflow-hidden"
           >
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+              className="w-28 h-28 mx-auto mb-8 rounded-3xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-2xl font-bold"
+            >
+              Y
+            </motion.div>
             <div className="space-y-5 text-lg text-zinc-300">
               <div>✓ Business Websites</div>
               <div>✓ Backend Systems</div>
